@@ -1,6 +1,7 @@
 body,
 html {
     margin: 0;
+    background: #000;
 }
 
 body>div {
