@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=400px" />
         <link rel="stylesheet" href="css/3ds.css" />
 
@@ -18,12 +17,32 @@
         <div id="bottom">
             <div>
                 <p>You can add 3D images</p>
-                <a class="img-link" href="images/img01.MPO" style="background-image: url('images/thumb01.png');"></a>
+                <a class="img-link" href="images/img01.MPO" style="background-image: url('images/thumb01.png')"></a>
             </div>
             <p>Links can be navigated with D-Pad or touchscreen</p>
         </div>
         <script>
-            window.scrollTo(40, 220);
+            window.scrollTo(40, 240);
+        </script>
+
+        <script>
+            //not needed, for debugging
+            
+            let divBoundsShown = false;
+            function toggleDivBounds() {
+                var elements = document.getElementsByTagName("div");
+
+                if (!divBoundsShown) {
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].classList.add("showDivBounds");
+                    }
+                } else {
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].classList.remove("showDivBounds");
+                    }
+                }
+                divBoundsShown = !divBoundsShown;
+            }
         </script>
     </body>
 </html>

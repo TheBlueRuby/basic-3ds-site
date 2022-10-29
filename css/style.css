@@ -7,3 +7,7 @@ body {
     height: 100px;
     width: 100px;
 }
+
+.showDivBounds {
+    border: 1px dashed #f00;
+}
