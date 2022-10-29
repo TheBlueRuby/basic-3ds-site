@@ -1,0 +1,23 @@
+body,
+html {
+    margin: 0;
+}
+
+body>div {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#top {
+    width: 400px;
+    height: 220px;
+    background: #000;
+    color: #fff;
+}
+
+#bottom {
+    width: 320px;
+    height: 212px;
+    background: #000;
+    color: #fff;
+}
