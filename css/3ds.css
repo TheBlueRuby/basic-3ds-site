@@ -1,26 +1,26 @@
 body,
 html {
-    margin: 0;
-    background: #000;
+	margin: 0;
+	background: #000;
 }
 
 body>div {
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0 5px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 5px;
 }
 
 #top {
-    width: 400px;
-    height: 220px;
-    background: #000;
-    color: #fff;
+	width: 400px;
+	height: 220px;
+	background: #000;
+	color: #fff;
 }
 
 #bottom {
-    width: 320px;
-    height: 240px;
-    background: #000;
-    color: #fff;
-    overflow: auto;
+	width: 320px;
+	height: 212px;
+	background: #000;
+	color: #fff;
+	overflow: auto;
 }

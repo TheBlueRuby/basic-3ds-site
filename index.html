@@ -1,48 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=400px" />
-        <link rel="stylesheet" href="css/3ds.css" />
 
-        <!--Customise style.css however you want!-->
-        <link rel="stylesheet" href="css/style.css" />
-        <title>Basic 3DS Website</title>
-    </head>
-    <body>
-        <div id="top">
-            <h1>Basic 3DS Website</h1>
-            <p>by TheBlueRuby</p>
-        </div>
-        <div id="bottom">
-            <div>
-                <p>You can add 3D images</p>
-                <a class="img-link" href="images/img01.MPO" style="background-image: url('images/thumb01.png')"></a>
-            </div>
-            <p>Links can be navigated with D-Pad or touchscreen</p>
-        </div>
-        <script>
-            window.scrollTo(40, 240);
-        </script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=400px" />
+	<link rel="stylesheet" href="css/3ds.css" />
 
-        <script>
-            //not needed, for debugging
-            
-            let divBoundsShown = false;
-            function toggleDivBounds() {
-                var elements = document.getElementsByTagName("div");
+	<!--Customise style.css however you want!-->
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Basic 3DS Website</title>
+</head>
 
-                if (!divBoundsShown) {
-                    for (var i = 0; i < elements.length; i++) {
-                        elements[i].classList.add("showDivBounds");
-                    }
-                } else {
-                    for (var i = 0; i < elements.length; i++) {
-                        elements[i].classList.remove("showDivBounds");
-                    }
-                }
-                divBoundsShown = !divBoundsShown;
-            }
-        </script>
-    </body>
+<body>
+	<script>
+		window.setInterval(function () {
+			window.scrollTo(40, 220);
+		}, 50);
+	</script>
+
+	<div id="top">
+		<h1>Basic 3DS Website</h1>
+		<p>by TheBlueRuby</p>
+		<p id="buttons-pressed"></p>
+	</div>
+	<div id="bottom">
+		<div>
+			<p>You can add 3D images</p>
+			<a class="img-link" href="images/img01.MPO" style="background-image: url('images/thumb01.png')"></a>
+		</div>
+		<p>Links can be navigated with D-Pad or touchscreen</p>
+		<p>You can handle buttons with JS as well! (See top screen)</p>
+		<p>Thanks to <a href="https://3dbrew.org/wiki/Internet_Browser">3DBrew</a> for data!</p>
+	</div>
+
+	<script>
+		const buttonStateElem = document.getElementById('buttons-pressed');
+		let buttonStateText = '';
+
+		function keyDetect(e) {
+			buttonStateText = '';
+			let whichKey
+			if (e) {
+				whichKey = (e.which);
+			} else {
+				e = event;
+				whichKey = (e.keyCode);
+			}
+			switch (whichKey) {
+				case 13:
+					buttonStateText = 'the A Button';
+					break;
+				case 37:
+					buttonStateText = 'D-Pad Left';
+					break;
+				case 38:
+					buttonStateText = 'D-Pad Up';
+					break;
+				case 39:
+					buttonStateText = 'D-Pad Right';
+					break;
+				case 40:
+					buttonStateText = 'D-Pad Down';
+					break;
+			}
+			buttonStateElem.innerText = 'You pressed ' + buttonStateText + ` (Keycode ${whichKey})`;
+		}
+		document.onkeyup = keyDetect;
+	</script>
+
+</body>
+
 </html>
